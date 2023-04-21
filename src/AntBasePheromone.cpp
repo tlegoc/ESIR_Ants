@@ -1,5 +1,9 @@
 #include "AntBasePheromone.h"
 
+AntBasePheromone::AntBasePheromone(Environment *env, Anthill *a) : AntBase(env, a)
+{
+}
+
 void AntBasePheromone::putPheromone(float quantity)
 {
     std::vector<Pheromone *> p = LocalizedEntity::perceive<Pheromone>();

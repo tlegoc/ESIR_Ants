@@ -7,7 +7,6 @@ std::set<Agent *> Agent::s_agents = {};
 Agent::Agent(Environment *env, const Vector2<float> &position, float radius)
     : Environment::LocalizedEntity(env, position, radius)
 {
-    std::cout << "Creating agent..." << std::endl;
     m_status = Status::running;
     s_agents.insert(this);
 }
@@ -29,7 +28,6 @@ void Agent::simulate()
             a++;
             break;
         case Status::destroy:
-            std::cout << "Deleting agent..." << std::endl;
             delete (*a);
             a = s_agents.erase(a);
             break;

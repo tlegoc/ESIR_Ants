@@ -9,6 +9,7 @@
 #include "Food.h"
 #include "Anthill.h"
 #include "SillyAnt.h"
+#include "Ant.h"
 
 static unsigned int windowWidth() { return 1280; }
 static unsigned int windowHeight() { return 700; }
@@ -31,7 +32,7 @@ void onKeyPressed(char key, Environment *environment)
 
 		for (int i = 0; i < 50; i++)
 		{
-			new SillyAnt(environment, a);
+			new Ant(environment, a);
 		}
 	}
 	break;
