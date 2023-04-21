@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/main.cpp.o -c /home/theo/Documents/PROG2/TP3/src/main.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/main.cpp",
+  "output": "src/CMakeFiles/Ants.dir/main.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Environment.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Environment.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Environment.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Environment.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Renderer.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Renderer.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Renderer.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Renderer.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Timer.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Timer.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Timer.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Timer.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Agent.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Agent.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Agent.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Agent.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Food.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Food.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Food.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Food.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/Anthill.cpp.o -c /home/theo/Documents/PROG2/TP3/src/Anthill.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/Anthill.cpp",
+  "output": "src/CMakeFiles/Ants.dir/Anthill.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/AntBase.cpp.o -c /home/theo/Documents/PROG2/TP3/src/AntBase.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/AntBase.cpp",
+  "output": "src/CMakeFiles/Ants.dir/AntBase.cpp.o"
+},
+{
+  "directory": "/home/theo/Documents/PROG2/TP3/build",
+  "command": "/usr/bin/g++ -isystem /usr/include/SDL2 -g -o src/CMakeFiles/Ants.dir/SillyAnt.cpp.o -c /home/theo/Documents/PROG2/TP3/src/SillyAnt.cpp",
+  "file": "/home/theo/Documents/PROG2/TP3/src/SillyAnt.cpp",
+  "output": "src/CMakeFiles/Ants.dir/SillyAnt.cpp.o"
+}
+]
