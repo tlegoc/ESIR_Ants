@@ -5,7 +5,6 @@
 
 Anthill::Anthill(Environment *env, const Vector2<float> &position) : Agent(env, position, 10)
 {
-    m_current_food = 0;
 }
 
 void Anthill::depositFood(float quantity)

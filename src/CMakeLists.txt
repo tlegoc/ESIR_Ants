@@ -19,6 +19,12 @@ add_executable(Ants
     AntBase.cpp
     SillyAnt.h
     SillyAnt.cpp
+    Pheromone.h
+    Pheromone.cpp
+    AntBasePheromone.h
+    AntBasePheromone.cpp
+    Ant.h
+    Ant.cpp
 )
 
 target_link_libraries(Ants Threads::Threads SDL2::Main SDL2::GFX)

@@ -11,5 +11,5 @@ public:
     void update();
 
 private:
-    float m_current_food;
+    float m_current_food = 0.0f;
 };

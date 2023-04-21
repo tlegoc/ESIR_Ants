@@ -9,7 +9,7 @@ AntBase::AntBase(Environment *env, Anthill *anthill) : Agent(env, anthill->getPo
                                                        m_lifetime(MathUtils::random(1000, 2500))
 {
     m_anthill = anthill;
-    m_direction = Vector2<float>();
+    m_direction = Vector2<float>(1.0f, 0.0f);
 }
 
 void AntBase::setTarget(const Vector2<float> &target)
