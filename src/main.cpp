@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
+#include <chrono>
 #include "Environment.h"
 #include "Renderer.h"
 #include "time.h"
@@ -49,11 +50,14 @@ void onKeyPressed(char key, Environment *environment)
 	}
 }
 
+static int64_t frametime = 0;
+
 /// <summary>
 /// Called at each time step.
 /// </summary>
 void onSimulate()
 {
+	Renderer::getInstance()->drawString(Vector2<float>(), std::to_string(frametime));
 	Agent::simulate();
 }
 
@@ -83,10 +87,12 @@ int main(int /*argc*/, char ** /*argv*/)
 	// The main event loop...
 	SDL_Event event;
 	bool exit = false;
+
+	auto started = std::chrono::high_resolution_clock::now();
 	while (!exit)
 	{
 		// Added because my pc sends way too many inputs
-		// per frame for some reason. I limited it by sending only one key input per frame
+		// per frame for some reason. I limited it by sending only one input per key per frame
 		std::set<char> pressedKeys = {};
 		// 1 - We handle events
 		while (SDL_PollEvent(&event))
@@ -107,7 +113,11 @@ int main(int /*argc*/, char ** /*argv*/)
 			}
 		}
 		// 2 - We update the simulation
-		Timer::update(0.5);
+		auto delay = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - started).count();
+		// Timer::update(delay / 100.0f);
+		started = std::chrono::high_resolution_clock::now();
+		Timer::update(.5f);
+		frametime = delay;
 		onSimulate();
 		// 3 - We render the scene
 		Renderer::getInstance()->flush();

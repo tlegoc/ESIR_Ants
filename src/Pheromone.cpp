@@ -3,7 +3,7 @@
 #include "Timer.h"
 #include "Renderer.h"
 
-Pheromone::Pheromone(Environment *env, const Vector2<float> &position) : Agent(env, position, 1)
+Pheromone::Pheromone(Environment *env, const Vector2<float> &position) : Agent(env, position, defaultRadius())
 {
 }
 
@@ -20,8 +20,7 @@ float Pheromone::getQuantity()
 void Pheromone::update()
 {
     m_quantity -= m_quantity * 0.01f * Timer::dt();
-
-    if (m_quantity <= 0)
+    if (m_quantity <= 0.01)
     {
         setStatus(Status::destroy);
         return;

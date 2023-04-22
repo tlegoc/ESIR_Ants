@@ -18,6 +18,7 @@ void Agent::setStatus(Status status)
 
 void Agent::simulate()
 {
+    // std::cout << "Agent count: " << s_agents.size() << std::endl;
     auto a = s_agents.begin();
     while (a != s_agents.end())
     {
@@ -28,6 +29,7 @@ void Agent::simulate()
             a++;
             break;
         case Status::destroy:
+            std::cout << "Destroying" << std::endl;
             delete (*a);
             a = s_agents.erase(a);
             break;

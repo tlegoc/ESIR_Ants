@@ -1,5 +1,7 @@
 #include "AntBasePheromone.h"
 
+#include <iostream>
+
 AntBasePheromone::AntBasePheromone(Environment *env, Anthill *a) : AntBase(env, a)
 {
 }
