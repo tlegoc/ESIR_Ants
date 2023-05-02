@@ -24,6 +24,13 @@ public:
     void dropFood();
     void dropFood(Anthill *hill);
     void dropFood(Food *hill);
+    void addFood(float quantity) { m_current_food += quantity; };
+    float getCurrentFood() { return m_current_food; };
+    Vector2<float> getDirection() { return m_direction; };
+    float getSpeed() { return m_speed; };
+    float getViewingAngle() { return m_viewing_angle; };
+    float getViewingDistance() { return m_viewing_distance; };
+    Anthill *getAnthill() { return m_anthill; };
 
     void updateLifetime();
 

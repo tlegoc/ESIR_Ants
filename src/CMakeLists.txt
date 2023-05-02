@@ -25,6 +25,12 @@ add_executable(Ants
     AntBasePheromone.cpp
     Ant.h
     Ant.cpp
+    AbstractRule.h
+    OrRule.h
+    OrRule.cpp
+    AbstractAntRule.h
+    AntWithRules.h
+    AntWithRules.cpp
 )
 
 target_link_libraries(Ants Threads::Threads SDL2::Main SDL2::GFX)

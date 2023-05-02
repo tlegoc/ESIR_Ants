@@ -11,6 +11,8 @@
 #include "Anthill.h"
 #include "SillyAnt.h"
 #include "Ant.h"
+#include "AntWithRules.h"
+#include "OrRule.h"
 
 static unsigned int windowWidth() { return 1280; }
 static unsigned int windowHeight() { return 700; }
@@ -33,13 +35,21 @@ void onKeyPressed(char key, Environment *environment)
 
 		for (int i = 0; i < 50; i++)
 		{
-			new Ant(environment, a);
+			// new Ant(environment, a);
+			AntWithRules *ant = new AntWithRules(environment, a);
+			OrRule *orrule = new OrRule({
+				new AntWithRules::RuleDropFood(ant),
+				new AntWithRules::RuleGotoAnthill(ant),
+				new AntWithRules::RuleFoodOrPherFinder(ant),
+				new AntWithRules::RuleRandomDirection(ant),
+			});
+			ant->setRule(orrule);
 		}
 	}
 	break;
 	case 'd':
 	{
-		std::vector<Food *> instances = environment->getAllInstancesOf<Food>();
+		std::vector<Food *> instances = Agent::getAllAgentsOf<Food>();
 		if (!instances.empty())
 			instances.back()->setStatus(Agent::Status::destroy);
 	}

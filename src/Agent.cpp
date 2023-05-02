@@ -29,7 +29,6 @@ void Agent::simulate()
             a++;
             break;
         case Status::destroy:
-            std::cout << "Destroying" << std::endl;
             delete (*a);
             a = s_agents.erase(a);
             break;

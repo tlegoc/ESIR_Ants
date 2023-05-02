@@ -6,7 +6,6 @@
 
 SillyAnt::SillyAnt(Environment *env, Anthill *a) : AntBase(env, a)
 {
-    m_direction = Vector2<float>::random().normalized();
 }
 
 void SillyAnt::update()

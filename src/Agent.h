@@ -32,6 +32,25 @@ public:
     /// @brief Called on game closed, destroys all agents
     static void finalize();
 
+    template <class T>
+    static std::vector<T *> getAllAgentsOf()
+    {
+        static_assert(std::is_base_of<Agent, T>::value, "type parameter of this class must derive from Agent");
+
+        std::vector<T *> agents = {};
+
+        for (auto it = s_agents.begin(); it != s_agents.end(); it++)
+        {
+            T *current = dynamic_cast<T *>(*it);
+            if (current != nullptr) // If the type of the entity is the expected one, we add it in the result
+            {
+                agents.push_back(current);
+            }
+        }
+
+        return agents;
+    }
+
 private:
     Status m_status;
 
