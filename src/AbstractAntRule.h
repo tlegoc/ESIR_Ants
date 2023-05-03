@@ -3,6 +3,8 @@
 #include "AbstractRule.h"
 #include "AntBase.h"
 
+#include <iostream>
+
 class AbstractAntRule : public AbstractRule
 {
 public:

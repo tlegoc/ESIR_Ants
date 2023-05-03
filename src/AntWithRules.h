@@ -4,6 +4,7 @@
 
 #include "AbstractAntRule.h"
 #include "AbstractRule.h"
+#include "OrRule.h"
 #include "Timer.h"
 
 #include <vector>
@@ -125,12 +126,10 @@ public:
     };
 
     AntWithRules(Environment *env, Anthill *a);
-    AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule *> rules);
+    AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule> rules);
     void update();
-    void setRule(AbstractRule *rule);
-
-    ~AntWithRules();
+    void setRule(OrRule rule);
 
 private:
-    AbstractRule *m_rule;
+    OrRule m_rule;
 };

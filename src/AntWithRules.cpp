@@ -4,30 +4,24 @@
 
 AntWithRules::AntWithRules(Environment *env, Anthill *a) : AntBasePheromone(env, a)
 {
-    m_rule = new OrRule({});
+    m_rule = OrRule({});
 }
 
-AntWithRules::AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule *> rules) : AntBasePheromone(env, a)
+AntWithRules::AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule> rules) : AntBasePheromone(env, a)
 {
-    m_rule = new OrRule(rules);
+    m_rule = OrRule(rules);
 }
 
 void AntWithRules::update()
 {
-    if (m_rule->condition())
-        m_rule->action();
+    if (m_rule.condition())
+        m_rule.action();
 
     updateLifetime();
     render();
 };
 
-AntWithRules::~AntWithRules()
+void AntWithRules::setRule(OrRule rule)
 {
-    delete m_rule;
-}
-
-void AntWithRules::setRule(AbstractRule *rule)
-{
-    delete m_rule;
     m_rule = rule;
 }

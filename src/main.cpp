@@ -37,11 +37,11 @@ void onKeyPressed(char key, Environment *environment)
 		{
 			// new Ant(environment, a);
 			AntWithRules *ant = new AntWithRules(environment, a);
-			OrRule *orrule = new OrRule({
-				new AntWithRules::RuleDropFood(ant),
-				new AntWithRules::RuleGotoAnthill(ant),
-				new AntWithRules::RuleFoodOrPherFinder(ant),
-				new AntWithRules::RuleRandomDirection(ant),
+			OrRule orrule = OrRule({
+				AntWithRules::RuleDropFood(ant),
+				AntWithRules::RuleGotoAnthill(ant),
+				AntWithRules::RuleFoodOrPherFinder(ant),
+				AntWithRules::RuleRandomDirection(ant),
 			});
 			ant->setRule(orrule);
 		}
