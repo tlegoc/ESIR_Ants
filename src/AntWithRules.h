@@ -125,11 +125,13 @@ public:
         }
     };
 
-    AntWithRules(Environment *env, Anthill *a);
-    AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule> rules);
+    AntWithRules(Environment *env, Anthill *a) = delete;
+    AntWithRules(Environment *env, Anthill *a, AbstractRule *rule1, AbstractRule *rule2);
+    AntWithRules(Environment *env, Anthill *a, AbstractRule *rule);
     void update();
-    void setRule(OrRule rule);
+    void setRule(OrRule *rule);
+    ~AntWithRules();
 
 private:
-    OrRule m_rule;
+    AbstractRule *m_rule;
 };
