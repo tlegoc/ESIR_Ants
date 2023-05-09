@@ -7,11 +7,13 @@
 class OrRule : public AbstractRule
 {
 public:
-    OrRule(std::vector<AbstractRule> rules);
+    OrRule() = delete;
+    OrRule(AbstractRule *rule1, AbstractRule *rule2);
     bool condition();
     void action();
+    ~OrRule();
 
 private:
-    std::vector<AbstractRule> m_rules;
-    int m_selected;
+    AbstractRule *m_rule1;
+    AbstractRule *m_rule2;
 };

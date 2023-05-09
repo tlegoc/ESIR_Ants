@@ -2,26 +2,30 @@
 
 #include "OrRule.h"
 
-AntWithRules::AntWithRules(Environment *env, Anthill *a) : AntBasePheromone(env, a)
+AntWithRules::AntWithRules(Environment *env, Anthill *a, AbstractRule *rule1, AbstractRule *rule2) : AntWithRules(env, a, new OrRule(rule1, rule2))
 {
-    m_rule = OrRule({});
 }
 
-AntWithRules::AntWithRules(Environment *env, Anthill *a, std::vector<AbstractRule> rules) : AntBasePheromone(env, a)
+AntWithRules::AntWithRules(Environment *env, Anthill *a, AbstractRule *rule) : AntBasePheromone(env, a)
 {
-    m_rule = OrRule(rules);
+    m_rule = rule;
 }
 
 void AntWithRules::update()
 {
-    if (m_rule.condition())
-        m_rule.action();
+    if (m_rule->condition())
+        m_rule->action();
 
     updateLifetime();
     render();
 };
 
-void AntWithRules::setRule(OrRule rule)
+void AntWithRules::setRule(OrRule *rule)
 {
     m_rule = rule;
+}
+
+AntWithRules::~AntWithRules()
+{
+    delete m_rule;
 }

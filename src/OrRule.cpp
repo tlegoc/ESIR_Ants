@@ -2,28 +2,27 @@
 
 #include <iostream>
 
-OrRule::OrRule(std::vector<AbstractRule> rules)
+OrRule::OrRule(AbstractRule *rule1, AbstractRule *rule2)
 {
-    m_rules = rules;
-    m_selected = -1;
+    m_rule1 = rule1;
+    m_rule2 = rule2;
 }
 
 bool OrRule::condition()
 {
-    m_selected = -1;
-    for (int i = 0; i < m_rules.size(); i++)
-    {
-        if (m_rules[i].condition())
-        {
-            m_selected = i;
-            return true;
-        }
-    }
-    return false;
+    return m_rule1->condition() || m_rule2->condition();
 }
 
 void OrRule::action()
 {
-    if (m_selected != -1)
-        m_rules[m_selected].action();
+    if (m_rule1->condition())
+        m_rule1->action();
+    if (m_rule2->condition())
+        m_rule2->action();
+}
+
+OrRule::~OrRule()
+{
+    delete m_rule1;
+    delete m_rule2;
 }

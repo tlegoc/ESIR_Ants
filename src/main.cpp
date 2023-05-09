@@ -36,13 +36,10 @@ void onKeyPressed(char key, Environment *environment)
 		for (int i = 0; i < 50; i++)
 		{
 			// new Ant(environment, a);
-			AntWithRules *ant = new AntWithRules(environment, a);
-			OrRule orrule = OrRule({
-				AntWithRules::RuleDropFood(ant),
-				AntWithRules::RuleGotoAnthill(ant),
-				AntWithRules::RuleFoodOrPherFinder(ant),
-				AntWithRules::RuleRandomDirection(ant),
-			});
+			AntWithRules *ant = new AntWithRules(environment, a, nullptr);
+			OrRule *orrule1 = new OrRule(new AntWithRules::RuleDropFood(ant), new AntWithRules::RuleGotoAnthill(ant));
+			OrRule *orrule2 = new OrRule(new AntWithRules::RuleFoodOrPherFinder(ant), new AntWithRules::RuleRandomDirection(ant));
+			OrRule *orrule = new OrRule(orrule1, orrule2);
 			ant->setRule(orrule);
 		}
 	}
