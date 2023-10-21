@@ -1,0 +1,12 @@
+{
+  "name" : "esir-ants",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "ae360361a434310ffee36d84eb01c033b648fb22",
+  "dependencies" : [ {
+    "name" : "sdl2",
+    "version>=" : "2.28.3#1"
+  }, {
+    "name" : "sdl2-gfx",
+    "version>=" : "1.0.4#10"
+  } ]
+}

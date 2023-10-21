@@ -33,4 +33,10 @@ add_executable(Ants
     AntWithRules.cpp
 )
 
-target_link_libraries(Ants Threads::Threads SDL2::Main SDL2::GFX)
+target_link_libraries(Ants PRIVATE Threads::Threads SDL2::GFX)
+
+target_link_libraries(Ants
+        PRIVATE
+        $<TARGET_NAME_IF_EXISTS:SDL2::SDL2main>
+        $<IF:$<TARGET_EXISTS:SDL2::SDL2>,SDL2::SDL2,SDL2::SDL2-static>
+)

@@ -1,4 +1,8 @@
 #include <iostream>
+
+#if WIN32
+#define SDL_MAIN_HANDLED
+#endif
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <chrono>
@@ -13,6 +17,7 @@
 #include "Ant.h"
 #include "AntWithRules.h"
 #include "OrRule.h"
+
 
 static unsigned int windowWidth() { return 1280; }
 static unsigned int windowHeight() { return 700; }
